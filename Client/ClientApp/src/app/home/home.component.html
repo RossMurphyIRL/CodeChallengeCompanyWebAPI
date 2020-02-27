@@ -1,0 +1,63 @@
+<div class="gl-logo"><img height="110" src="assets/img/CodeChallengeBanner.png"></div>
+
+<div class="top-action-row">
+  <button mat-button (click)="openDialog('Add',{})" mat-flat-button color="primary" class="add-button">Add Row</button>
+  <input placeholder="Isin" class="search-input" [ngModel]="search" (ngModelChange)="inputChange($event)">
+</div>
+
+<div class="container text-center">
+  <table mat-table [dataSource]="dataSource" #mytable class="my-table mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Exchange Column -->
+    <ng-container matColumnDef="exchange">
+      <th mat-header-cell *matHeaderCellDef> Exchange </th>
+      <td mat-cell *matCellDef="let element"> {{element.exchange}} </td>
+    </ng-container>
+
+    <!-- Ticker Column -->
+    <ng-container matColumnDef="ticker">
+      <th mat-header-cell *matHeaderCellDef> Ticker </th>
+      <td mat-cell *matCellDef="let element"> {{element.ticker}} </td>
+    </ng-container>
+
+    <!-- Isin Column -->
+    <ng-container matColumnDef="isin">
+      <th mat-header-cell *matHeaderCellDef> Isin </th>
+      <td mat-cell *matCellDef="let element"> {{element.isin}} </td>
+    </ng-container>
+
+    <!-- Website Column -->
+    <ng-container matColumnDef="website">
+      <th mat-header-cell *matHeaderCellDef> Website </th>
+      <td mat-cell *matCellDef="let element"> {{element.website}} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <a (click)="openDialog('Update',element)">Edit</a> |
+        <a (click)="openDialog('Delete',element)">Delete</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

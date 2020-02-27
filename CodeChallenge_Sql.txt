@@ -1,0 +1,33 @@
+--1.
+CREATE DATABASE CodeChallenge;
+
+--2.
+CREATE TABLE [CodeChallenge].[dbo].Companies (
+    [Id] int NOT NULL IDENTITY(1, 1),
+    [Name] varchar(255) NOT NULL,
+    [Exchange] varchar(255) NOT NULL,
+    [Ticker] varchar(255) NOT NULL,
+    [Isin] varchar(255) NOT NULL,
+    [Website] varchar(255) NULL,
+);
+
+--3.
+CREATE LOGIN Challenger WITH PASSWORD = 'GLcc28022020';
+
+--4.
+use [CodeChallenge]
+CREATE USER Challenger FOR LOGIN Challenger;  
+
+--5.
+use [CodeChallenge]
+exec sp_addrolemember 'db_owner', 'Challenger';
+
+--6.
+CREATE TABLE [CodeChallenge].[dbo].Users (
+    [Id] int NOT NULL IDENTITY(1, 1),
+    [UserName] varchar(20) NOT NULL,
+    [Password] varchar(20) NOT NULL
+);
+
+--7.
+Insert into [CodeChallenge].[dbo].Users (Id, UserName, Password) Values (1,'clientApp','angular8Pwd')

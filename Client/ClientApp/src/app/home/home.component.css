@@ -1,0 +1,45 @@
+.my-table{
+    width:100%;
+}
+
+.top-action-row{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.add-button{
+  right: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.my-table ::ng-deep tbody{
+    text-align: left;
+}
+
+.search-input{
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-right: 10px;
+  width: 180px;
+  float: right;
+}
+
+.code-challenge-text{
+  margin-left: 120px;
+  color: grey;
+}
+
+.action-link a:hover{
+  cursor: pointer;
+}
+
+
+.container ::ng-deep a:not([href]) {
+  color: #0366d6 !important;
+}
+
+.gl-logo{
+  margin-top: 10px;
+}
