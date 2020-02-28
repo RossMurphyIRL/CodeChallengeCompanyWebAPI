@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Row Action : <strong>{{action}}</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+    <input placeholder="{{action}} Name" matInput [(ngModel)]="local_data.name" required>
+  </mat-form-field><br>
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input placeholder="{{action}} Exchange" matInput [(ngModel)]="local_data.exchange" required>
+  </mat-form-field><br>
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input placeholder="{{action}} Ticker" matInput [(ngModel)]="local_data.ticker" required>
+  </mat-form-field><br>
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input placeholder="{{action}} Isin" matInput [(ngModel)]="local_data.isin" required>
+  </mat-form-field><br>
+  <mat-form-field *ngIf="action != 'Delete';">
+    <input placeholder="{{action}} Website (with http(s))" matInput [(ngModel)]="local_data.website" type="url">
+  </mat-form-field>
+  <ng-template #elseTemplate>
+    Sure to delete <b>{{local_data.name}}</b>?
+  </ng-template><br>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" [disabled]="formInvalid">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
