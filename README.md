@@ -19,7 +19,8 @@ Visual Studio 2017/2019 with latest update for opening the solution with asp.net
 Have Node.Js > 12.16.1 installed to run the client application for angular 8 to build.  
 (Optional)MSSQL Server running and SSMS installed for running SQL scripts  
 
-## Application Setup
+## Application Setup for Running
+Open open the .sln file in Visual Studio.  
 Before running the application open up the CodeChallenge_Sql text file and run the statements according to how they are number, do not run them all together.
 
 Inside the appsettings.json file, set the server variable in the connection string to point to you local MSSQL server.
