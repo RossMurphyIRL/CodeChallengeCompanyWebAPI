@@ -22,10 +22,10 @@ namespace WebAPI.Filters
 
 				operation.Parameters.Add(new OpenApiParameter
 				{
-					Name = "Authorization",
+					Name = "X-Authorization",
 					In = ParameterLocation.Path,
 					Description = "access token",
-					Required = true,
+					Required = false,
 					Schema = new OpenApiSchema()
 					{
 						Type= "string"
