@@ -57,5 +57,5 @@ One of the projects not loading in VS: If this happens remove and re-add the exi
 Swagger: With recent updates to the swagger with latest asp.net core 3^. library the authorisation input has become broken, see: https://community.smartbear.com/t5/Swagger-Open-Source-Tools/Swagger-required-OpenApiParameter-for-header/td-p/197628. This has not been resolved despite the response.
 
 ## Further Improvements
-Connection string should not be stored in the application but in a KeyVault.
+Connection string should not be stored in the application but in a KeyVault.  
 More validation added in regard to string length.
