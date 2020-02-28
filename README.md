@@ -15,9 +15,9 @@ Retrieve a collection of all Companies
 Update an existing Company
 
 ## Prerequisites
-Visual Studio 2017/2019 with latest update for opening the solution with asp.net core 3.1.
-Have Node.Js > 12.16.1 installed to run the client application for angular 8 to build.
-(Optional)MSSQL Server running and SSMS installed for running SQL scripts
+Visual Studio 2017/2019 with latest update for opening the solution with asp.net core 3.1.  
+Have Node.Js > 12.16.1 installed to run the client application for angular 8 to build.  
+(Optional)MSSQL Server running and SSMS installed for running SQL scripts  
 
 ## Application Setup
 Before running the application open up the CodeChallenge_Sql text file and run the statements according to how they are number, do not run them all together.
@@ -28,14 +28,14 @@ Optional you can change the UseInMemoryDB property in the appsettings.json file 
 Before starting the application please make sure you have both the WebAPI and Client Project set start up in the solutions properties settings.
 
 ## Functionality
-API is built using C# with  asp.net core 3.1
-The endpoints of the API can be reached:
-// GET: api/Companies - Gets list of companies
-// GET: api/Companies/<id> - Gets specific company
-// GET: api/Companies/GetCompanyByIsin?isin=<isin>
-// PUT: api/Companies/<id> - Updates specific company
-// POST: api/Companies - Create a new company
-// DELETE: api/Companies/<id> - Deletes specific company
+API is built using C# with  asp.net core 3.1  
+The endpoints of the API can be reached:  
+// GET: api/Companies - Gets list of companies  
+// GET: api/Companies/<id> - Gets specific company  
+// GET: api/Companies/GetCompanyByIsin?isin=<isin> 
+// PUT: api/Companies/<id> - Updates specific company  
+// POST: api/Companies - Create a new company  
+// DELETE: api/Companies/<id> - Deletes specific company  
   
 ### Client Application
 Provides a simple interface for quering the API using Angular 8.
