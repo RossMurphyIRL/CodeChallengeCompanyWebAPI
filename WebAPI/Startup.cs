@@ -61,6 +61,13 @@ namespace CodeChallenege
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.Use((httpContext, next) =>
+            {
+                if (httpContext.Request.Headers["X-Authorization"].Count > 0)
+                    httpContext.Request.Headers.Add("Authorization", httpContext.Request.Headers["X-Authorization"]);
+
+                return next();
+            });
             app.UseStaticFiles();
             app.ConfigureCors(env);
             app.UseSecurityHeaders();
