@@ -49,16 +49,12 @@ namespace CodeChallenege
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
-            services.AddMvc(options =>
-            {
-                options.EnableEndpointRouting = false;
-                options.Filters.Add<ValidationFilter>();
-            }).AddFluentValidation();
             services.AddTransient<IValidator<CompanyDto>, CompanyValidator>();
             services.AddTransient<IValidator<UserDto>, UserValidator>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICompanyContext, CompanyRepository>();
             services.AddScoped<ICompanyService, CompanyService>();
+            services.ConfigureMvc();
             services.AddControllers();
             services.ConfigureSwagger();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -83,7 +79,13 @@ namespace CodeChallenege
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.ConfigureSwagger(env, Configuration.GetValue<bool>("UseSwagger"));
+            app.Use((httpContext, next) =>
+            {
+                if (httpContext.Request.Headers["X-Authorization"].Count > 0)
+                    httpContext.Request.Headers.Add("Authorization", httpContext.Request.Headers["X-Authorization"]);
+
+                return next();
+            });
             app.ConfigureExceptionHandler();
             app.UseStaticFiles();
             app.ConfigureCors(env);
@@ -96,6 +98,8 @@ namespace CodeChallenege
             {
                 endpoints.MapControllers();
             });
+            app.ConfigureSwagger(env, Configuration.GetValue<bool>("UseSwagger"));
+
         }
     }
 }

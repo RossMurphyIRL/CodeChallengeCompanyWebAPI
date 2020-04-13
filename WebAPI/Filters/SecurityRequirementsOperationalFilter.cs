@@ -23,12 +23,13 @@ namespace WebAPI.Filters
 				operation.Parameters.Add(new OpenApiParameter
 				{
 					Name = "X-Authorization",
-					In = ParameterLocation.Path,
+					In = ParameterLocation.Header,
 					Description = "access token",
-					Required = false,
+					Required = true,
 					Schema = new OpenApiSchema()
 					{
-						Type= "string"
+						Type= "string",
+						Default = new OpenApiString("Bearer {access token}")
 					}
 				});
 			}

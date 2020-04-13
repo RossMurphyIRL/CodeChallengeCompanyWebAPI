@@ -34,7 +34,7 @@ namespace WebAPI.Middleware
 				{
 					Version = "v1",
 					Title = "Company API",
-					Description = "Code Challenege",
+					Description = "Code Challenge",
 					Contact = new OpenApiContact
 					{
 						Name = "Ross Murphy",
