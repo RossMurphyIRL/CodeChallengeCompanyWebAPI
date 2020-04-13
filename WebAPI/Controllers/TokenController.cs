@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Core;
+using Core.Interfaces;
+using Infrastructure;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -7,29 +11,29 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class TokenController : ControllerBase
     {
         public IConfiguration _configuration;
-        private readonly ApiContext _context;
+        private readonly IUserRepository _userRepository;
 
-        public TokenController(IConfiguration config, ApiContext context)
+        public TokenController(IConfiguration config, IUserRepository userRepository)
         {
             _configuration = config;
-            _context = context;
+            _userRepository = userRepository;
         }
         [HttpPost]
-        public async Task<IActionResult> Post(User _userData)
+        public async Task<IActionResult> Post(UserDto _userData)
         {
 
             if (_userData != null && _userData.UserName != null && _userData.Password != null)
             {
-                var user = await GetUser(_userData.UserName, _userData.Password);
+                var user = await _userRepository.GetUser(_userData.UserName, _userData.Password);
 
                 if (user != null)
                 {
@@ -59,11 +63,6 @@ namespace WebAPI.Controllers
             {
                 return BadRequest();
             }
-        }
-
-        private async Task<User> GetUser(string username, string password)
-        {
-            return await _context.Users.FirstOrDefaultAsync(u => u.UserName == username && u.Password == password);
         }
     }
 

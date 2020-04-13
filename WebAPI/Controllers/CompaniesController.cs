@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core;
+using Core.Interfaces;
+using Infrastructure;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WebAPI.Models;
-using WebAPI.Validators;
-using static WebAPI.CustomExceptions.CustomExceptions;
+using Services.Interfaces;
+using WebAPI.Filters;
 
 namespace WebAPI.Controllers
 {
@@ -17,11 +15,13 @@ namespace WebAPI.Controllers
     [ApiController]
     public class CompaniesController : ControllerBase
     {
-        private readonly ApiContext _context;
+        private readonly ICompanyContext _companyRepository;
+        private readonly ICompanyService _companyService;
 
-        public CompaniesController(ApiContext context)
+        public CompaniesController(ICompanyContext companyRepository, ICompanyService companyService)
         {
-            _context = context;
+            _companyRepository = companyRepository;
+            _companyService = companyService;
         }
 
         // GET: api/Companies
@@ -29,9 +29,9 @@ namespace WebAPI.Controllers
 		/// Gets list of all companies
 		/// </summary>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Company>>> GetCompanies()
+        public async Task<ActionResult<List<CompanyDto>>> GetCompanies()
         {
-            return await _context.Companies.ToListAsync();
+            return await _companyRepository.GetCompanies();
         }
 
         // GET: api/Companies/5
@@ -40,9 +40,9 @@ namespace WebAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
         [HttpGet("{id}")]
-        public async Task<ActionResult<Company>> GetCompany(int id)
+        public async Task<ActionResult<CompanyDto>> GetCompany(int id)
         {
-            var company = await _context.Companies.FindAsync(id);
+            var company = await _companyRepository.GetCompany(id);
 
             if (company == null)
             {
@@ -60,14 +60,13 @@ namespace WebAPI.Controllers
         [HttpGet]
         [Route("GetCompanyByIsin")]
         [ActionName("GetCompanyByIsin")]
-        public async Task<ActionResult<Company>> GetCompanyByIsin(string isin)
+        public async Task<ActionResult<CompanyDto>> GetCompanyByIsin(string isin)
         {
-            var companyIsinValidator = new CompanyIsinValidator();
-            if (!companyIsinValidator.Validate(isin).IsValid)
+            if (!_companyService.IsinIsValid(isin))
             {
-                throw new IsinException("Requested isin must be in correct format.");
+                return BadRequest("Requested isin must be in correct format.");
             }
-            var company = await _context.Companies.SingleOrDefaultAsync(x => x.Isin.ToLower().Contains(isin.ToLower()));
+            var company = await _companyRepository.GetCompanyByIsin(isin);
 
             if (company == null)
             {
@@ -83,49 +82,24 @@ namespace WebAPI.Controllers
 		/// </summary>
 		/// <param name="id"></param>
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCompany(int id, Company company)
+        public async Task<IActionResult> PutCompany(int id, CompanyDto company)
         {
-            if (id != company.Id)
+            if (id != company.Id || id ==0)
             {
-                return BadRequest();
+                return BadRequest("Company Id not valid");
             }
-
-            if (!ModelState.IsValid)
+            if (_companyService.IsinExists(company))
             {
-                throw new ModelStateException("Company model is in invalid state.");
+                return BadRequest("Company with isin: " + company.Isin + " already exists.");
             }
-
-            var companyIsinValidator = new CompanyIsinValidator();
-            if (!companyIsinValidator.Validate(company.Isin).IsValid)
+            var updateResult = await _companyRepository.UpdateCompany(company);
+            if (updateResult > 0)
             {
-                throw new IsinException("Update Isin value must be in correct format.");
-            }
-
-            var existingCompanyForIsin = _context.Companies.SingleOrDefaultAsync(x => x.Isin.ToLower().Contains(company.Isin.ToLower()) && x.Id != company.Id);
-            if (existingCompanyForIsin.Result != null)
+                return NoContent();
+            } else
             {
-                throw new IsinException("Company with isin:" + company.Isin + " already exists.");
+                return BadRequest("Error updating company");
             }
-
-            _context.Entry(company).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CompanyExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
         }
 
         // POST: api/Companies
@@ -134,47 +108,30 @@ namespace WebAPI.Controllers
 		/// </summary>
 		/// <param name="company"></param>
         [HttpPost]
-        public async Task<ActionResult<Company>> PostCompany(Company company)
+        public async Task<ActionResult<CompanyDto>> PostCompany(CompanyDto company)
         {
-            if (!ModelState.IsValid)
+            if (_companyService.IsinExists(company))
             {
-                throw new ModelStateException("Company model is in invalid state.");
+                return BadRequest("Company with isin: " + company.Isin + " already exists.");
             }
-            var companyIsinValidator = new CompanyIsinValidator();
-            if (!companyIsinValidator.Validate(company.Isin).IsValid)
-            {
-                throw new IsinException("Add Isin value must be in correct format.");
-            }
-            var existingCompanyForIsin = _context.Companies.SingleOrDefaultAsync(x => x.Isin.ToLower().Contains(company.Isin.ToLower()));
-            if (existingCompanyForIsin.Result != null)
-            {
-                throw new IsinException("Company with isin:" + company.Isin + " already exists.");
-            }
-            _context.Companies.Add(company);
-            await _context.SaveChangesAsync();
-
+            company = await _companyRepository.Add(company);
+            
             return CreatedAtAction("GetCompany", new { id = company.Id }, company);
         }
 
         // DELETE: api/Companies/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Company>> DeleteCompany(int id)
+        public async Task<ActionResult<CompanyDto>> DeleteCompany(int id)
         {
-            var company = await _context.Companies.FindAsync(id);
+            var company = await _companyRepository.GetCompany(id);
             if (company == null)
             {
-                return NotFound();
+                return NotFound("Can not find company");
             }
-
-            _context.Companies.Remove(company);
-            await _context.SaveChangesAsync();
+            _companyRepository.Delete(company);
 
             return company;
         }
 
-        private bool CompanyExists(int id)
-        {
-            return _context.Companies.Any(e => e.Id == id);
-        }
     }
 }

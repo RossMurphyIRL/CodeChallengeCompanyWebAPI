@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WebAPI.App_Startup;
-using WebAPI.Models;
 
 namespace CodeChallenege
 {
@@ -27,7 +27,7 @@ namespace CodeChallenege
                 {
                     //3. Get the instance of ApiContext
                     var services = scope.ServiceProvider;
-                    var context = services.GetRequiredService<ApiContext>();
+                    var context = services.GetRequiredService<CompanyContext>();
 
                     //4. Call the DataGenerator to create sample data
                     DataGenerator.Initialize(services);

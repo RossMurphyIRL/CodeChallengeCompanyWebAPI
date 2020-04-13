@@ -4,14 +4,80 @@
     "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj",
-        "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj",
         "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[8.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,9 +108,144 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "FluentValidation": {
+            "FluentValidation.ValidatorAttribute": {
               "target": "Package",
-              "version": "[9.0.0-preview2, )"
+              "version": "[8.6.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj",
+        "projectName": "WebAPI",
+        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj": {
+                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj"
+              },
+              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0-preview3, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -111,7 +312,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

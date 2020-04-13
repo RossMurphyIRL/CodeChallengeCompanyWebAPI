@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using WebAPI.Models;
 
-namespace WebAPI.Validators
+namespace Services.Validators
 {
     public class CompanyIsinValidator : AbstractValidator<string>
     {
@@ -26,6 +25,10 @@ namespace WebAPI.Validators
 		/// <returns>bool</returns>
         private bool FirstTwoCharactersAreLetters(string isin)
         {
+            if (isin.Length < 2)
+            {
+                return false;
+            }
             var firstTwoLetters = isin.Substring(0,2);
             return Regex.IsMatch(firstTwoLetters, @"^[a-zA-Z]+$");
         }

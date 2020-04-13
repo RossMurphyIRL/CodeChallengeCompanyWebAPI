@@ -3,12 +3,22 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using WebAPI.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Infrastructure;
+using Core.Interfaces;
+using WebAPI.Filters;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
+using WebAPI.Extensions;
+using Services.Services;
+using Services.Interfaces;
+using FluentValidation;
+using Services.Validators;
+using Core;
 
 namespace CodeChallenege
 {
@@ -28,13 +38,27 @@ namespace CodeChallenege
             // Use in-memory database if no sql environment available otherwise use connect to db from connection string.
             if (Configuration.GetValue<bool>("UseInMemoryDB"))
             {
-                services.AddDbContext<ApiContext>(opt =>
+                services.AddDbContext<CompanyContext>(opt =>
                                opt.UseInMemoryDatabase("CompanyList"));
             } else
             {
-                services.AddDbContext<ApiContext>(opt =>
+                services.AddDbContext<CompanyContext>(opt =>
                          opt.UseSqlServer(Configuration.GetConnectionString("CodeChallenegeDatabase")));
             }
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+            services.AddMvc(options =>
+            {
+                options.EnableEndpointRouting = false;
+                options.Filters.Add<ValidationFilter>();
+            }).AddFluentValidation();
+            services.AddTransient<IValidator<CompanyDto>, CompanyValidator>();
+            services.AddTransient<IValidator<UserDto>, UserValidator>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICompanyContext, CompanyRepository>();
+            services.AddScoped<ICompanyService, CompanyService>();
             services.AddControllers();
             services.ConfigureSwagger();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
@@ -60,6 +84,7 @@ namespace CodeChallenege
                 app.UseDeveloperExceptionPage();
             }
             app.ConfigureSwagger(env, Configuration.GetValue<bool>("UseSwagger"));
+            app.ConfigureExceptionHandler();
             app.UseStaticFiles();
             app.ConfigureCors(env);
             app.UseSecurityHeaders();

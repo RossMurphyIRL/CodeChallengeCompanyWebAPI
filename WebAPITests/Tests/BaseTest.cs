@@ -1,29 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using WebAPI.Models;
+using System.Threading.Tasks;
+using WebAPITests.Helpers;
 
 namespace WebAPITests
 {
     [TestClass]
     public class BaseTest
     {
-        protected static ApiContext _context;
+        protected static CompanyHelper _helper;
+        protected static Task<List<CompanyDto>> _companies;
 
         public BaseTest()
         {
-            var options = new DbContextOptionsBuilder<ApiContext>()
-                .UseInMemoryDatabase(databaseName: "Companies_Db")
-                .Options;
-            _context = new ApiContext(options);
+            _helper = new CompanyHelper();
+            _companies = Task.FromResult(new List<CompanyDto>());
         }
 
         [TestCleanup]
         public void TestCleanup()
         {
-            _context.Database.EnsureDeleted();
+            _companies = Task.FromResult(new List<CompanyDto>());
         }
     }
+
 }

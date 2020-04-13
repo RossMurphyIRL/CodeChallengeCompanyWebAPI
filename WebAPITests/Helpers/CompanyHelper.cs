@@ -1,22 +1,22 @@
-﻿using System;
+﻿using Core;
+using Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using WebAPI.Models;
+using System.Threading.Tasks;
 
 namespace WebAPITests.Helpers
 {
     public class CompanyHelper
     {
-        protected readonly ApiContext _context;
-        public CompanyHelper(ApiContext context)
+        public CompanyHelper()
         {
-            _context = context;
         }
 
-        public void AddCompanies()
+        public List<CompanyDto> TestDataCompanies()
         {
-            _context.Companies.AddRange(
-                    new Company
+            return new List<CompanyDto>() {
+                    new CompanyDto
                     {
                         Id = 1,
                         Name = "Apple Inc.",
@@ -25,7 +25,7 @@ namespace WebAPITests.Helpers
                         Isin = "US0378331005",
                         Website = "ApiContext"
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 2,
                         Name = "British Airways Plc",
@@ -34,7 +34,7 @@ namespace WebAPITests.Helpers
                         Isin = "US1104193065",
                         Website = null
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 3,
                         Name = "Heineken NV",
@@ -43,7 +43,7 @@ namespace WebAPITests.Helpers
                         Isin = "NL0000009165",
                         Website = null
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 4,
                         Name = "Panasonic Corp",
@@ -52,7 +52,7 @@ namespace WebAPITests.Helpers
                         Isin = "JP3866800000",
                         Website = "http://www.panasonic.co.jp"
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 5,
                         Name = "Porsche Automobil",
@@ -60,14 +60,43 @@ namespace WebAPITests.Helpers
                         Ticker = "PAH3",
                         Isin = "DE000PAH0038",
                         Website = "https://www.porsche.com/"
-                    });
+                    }
+                    };
 
-            _context.SaveChanges();
         }
 
-        public Company CreateCompany(int id, string name, string exchange, string ticker,string isin, string website)
+        public Task<CompanyDto> GetCompany(int num)
         {
-            return new Company { Id = id, Name = name, Exchange = exchange, Ticker = ticker, Isin = isin, Website = website };
+            var companies = new List<CompanyDto>()
+            {
+                new CompanyDto
+                {
+                    Id = 1,
+                    Name = "Apple Inc.",
+                    Exchange = "NASDAQ",
+                    Ticker = "AAPL",
+                    Isin = "US0378331005",
+                    Website = "ApiContext"
+                },
+                new CompanyDto
+                 {
+                    Id = 2,
+                    Name = "British Airways Plc",
+                    Exchange = "Pink Sheets",
+                    Ticker = "BAIRY",
+                    Isin = "US1104193065",
+                    Website = null
+                }
+            };
+            return Task.FromResult(companies[num]);
+        }
+        public CompanyDto CreateCompany(int id, string name, string exchange, string ticker, string isin, string website)
+        {
+            return new CompanyDto { Id = id, Name = name, Exchange = exchange, Ticker = ticker, Isin = isin, Website = website };
+        }
+        public Task<CompanyDto> AddedCompany(int id, string name, string exchange, string ticker, string isin, string website)
+        {
+            return Task.FromResult(new CompanyDto { Id = id, Name = name, Exchange = exchange, Ticker = ticker, Isin = isin, Website = website });
         }
     }
 }

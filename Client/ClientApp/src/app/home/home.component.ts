@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   inputChange(val): void {
     this.dataSource = [];
-    if (val.length === 12 && /^[a-zA-Z]+$/.test(val.substring(0, 2))) {
+    if (true) {
       this.companyByIsinSubscription = this.homeService.getCompanyByIsin(val).subscribe(
         company => {
           this.dataSource.push(company);

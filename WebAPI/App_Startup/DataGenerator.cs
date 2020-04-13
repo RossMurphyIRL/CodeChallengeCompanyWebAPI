@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Core;
+using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAPI.Models;
 
 namespace WebAPI.App_Startup
 {
@@ -12,8 +13,8 @@ namespace WebAPI.App_Startup
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new ApiContext(
-            serviceProvider.GetRequiredService<DbContextOptions<ApiContext>>()))
+            using (var context = new CompanyContext(
+            serviceProvider.GetRequiredService<DbContextOptions<CompanyContext>>()))
             {
                 // Look for any companies.
                 if (context.Companies.Any())
@@ -22,7 +23,7 @@ namespace WebAPI.App_Startup
                 }
 
                 context.Companies.AddRange(
-                    new Company
+                    new CompanyDto
                     {
                         Id = 1,
                         Name = "Apple Inc.",
@@ -31,7 +32,7 @@ namespace WebAPI.App_Startup
                         Isin = "US0378331005",
                         Website = "http://www.apple.com"
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 2,
                         Name = "British Airways Plc",
@@ -40,7 +41,7 @@ namespace WebAPI.App_Startup
                         Isin = "US1104193065",
                         Website = null
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 3,
                         Name = "Heineken NV",
@@ -49,7 +50,7 @@ namespace WebAPI.App_Startup
                         Isin = "NL0000009165",
                         Website = null
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 4,
                         Name = "Panasonic Corp",
@@ -58,7 +59,7 @@ namespace WebAPI.App_Startup
                         Isin = "JP3866800000",
                         Website = "http://www.panasonic.co.jp"
                     },
-                    new Company
+                    new CompanyDto
                     {
                         Id = 5,
                         Name = "Porsche Automobil",
@@ -68,7 +69,7 @@ namespace WebAPI.App_Startup
                         Website = "https://www.porsche.com/"
                     });
 
-                context.Users.AddRange(new User
+                context.Users.AddRange(new UserDto
                 {
                     Id= 1,
                     UserName = "clientApp",
