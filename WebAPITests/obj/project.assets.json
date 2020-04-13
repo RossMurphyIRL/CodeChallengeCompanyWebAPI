@@ -11396,8 +11396,8 @@
     },
     "Services/1.0.0": {
       "type": "project",
-      "path": "../ClassLibrary1/Services.csproj",
-      "msbuildProject": "../ClassLibrary1/Services.csproj"
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     },
     "WebAPI/1.0.0": {
       "type": "project",
@@ -11414,6 +11414,7 @@
       "Microsoft.NET.Test.Sdk >= 16.2.0",
       "MockQueryable.Moq >= 3.1.1",
       "Moq >= 4.13.1",
+      "Services >= 1.0.0",
       "WebAPI >= 1.0.0",
       "coverlet.collector >= 1.0.1"
     ]
@@ -11449,6 +11450,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj"
+            },
             "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj": {
               "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj"
             }

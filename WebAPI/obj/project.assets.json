@@ -9427,8 +9427,8 @@
     },
     "Services/1.0.0": {
       "type": "project",
-      "path": "../ClassLibrary1/Services.csproj",
-      "msbuildProject": "../ClassLibrary1/Services.csproj"
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9480,11 +9480,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj": {
-              "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\ClassLibrary1\\Services.csproj"
-            },
             "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj": {
               "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj"
+            },
+            "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj"
             }
           }
         }
