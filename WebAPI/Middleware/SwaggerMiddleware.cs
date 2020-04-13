@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Linq;
+using WebAPI.Filters;
 
 namespace WebAPI.Middleware
 {
@@ -39,8 +40,11 @@ namespace WebAPI.Middleware
 						Name = "Ross Murphy",
 						Email = "rossbmurphy@gmail.com"
 					}
-				});	
+				});
+				c.OperationFilter<SecurityRequirementsOperationFilter>();
+				c.CustomSchemaIds(x => x.FullName);
 			});
+
 		}
 
 		/// <summary>

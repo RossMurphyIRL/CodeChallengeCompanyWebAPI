@@ -30,4 +30,4 @@ CREATE TABLE [CodeChallenge].[dbo].Users (
 );
 
 --7.
-Insert into [CodeChallenge].[dbo].Users (Id, UserName, Password) Values (1,'clientApp','angular8Pwd')
+Insert into [CodeChallenge].[dbo].Users (UserName, Password) Values ('clientApp','angular8Pwd')
