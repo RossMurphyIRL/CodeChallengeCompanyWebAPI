@@ -4,7 +4,7 @@ Design and code a WebAPI solution in C# for a middle tier "Company API."
 ## Changes made from feedback
 Validation and Data Access have been abstracted out to their own layer.  
 Repository pattern implemented as part of SOLID Principles being applied.  
-Await used instead of result. Microsoft best practices: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions  
+Await used instead of result. Microsoft recommends: https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming 
 Errors now return correct status codes: Client request validation returns 4xx error and server error hides details returns 5xx error.  
 Tests added to ensure each layer is unit tested correctly, mocks have been added instead of using in-memory database. Library added to test async database calls.   
 
