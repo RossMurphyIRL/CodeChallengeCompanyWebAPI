@@ -1,7 +1,7 @@
 # CodeChallengeCompanyWebAPI
 Design and code a WebAPI solution in C# for a middle tier "Company API."
 
-## Feedback and changes made
+## Changes made from feedback
 Validation and Data Access have been abstracted out to their own layer.  
 Repository pattern implemented as part of SOLID Principles being applied.  
 Await used instead of result. Microsoft best practices: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions  
