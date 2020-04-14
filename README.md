@@ -1,5 +1,10 @@
 # CodeChallengeCompanyWebAPI
-Design and code a WebAPI solution in C# for a middle tier "Company API."
+Design and code a WebAPI solution in C# and .Net for a middle tier "Company API."  
+Result:  
+* .Net Core 3.1 - Repository Pattern
+* Client Front-End Application: Angular 8
+* Unit testing of Controllers, Services and Repositories
+* Packages used: FluentValidation.AspNetCore, Swashbuckle.AspNetCore and MockQuerryable.Moq
 
 ## Changes made from feedback
 Validation and Data Access have been abstracted out to their own layer.  
