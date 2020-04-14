@@ -1,5 +1,6 @@
 # CodeChallengeCompanyWebAPI
 Design and code a WebAPI solution in C# and .Net for a middle tier "Company API."  
+
 Result:  
 * .Net Core 3.1 - Repository Pattern
 * Client Front-End Application: Angular 8
