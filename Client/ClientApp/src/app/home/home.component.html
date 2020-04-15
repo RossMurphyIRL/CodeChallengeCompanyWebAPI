@@ -2,7 +2,7 @@
 
 <div class="top-action-row">
   <button mat-button (click)="openDialog('Add',{})" mat-flat-button color="primary" class="add-button">Add Row</button>
-  <input placeholder="Isin" class="search-input" [ngModel]="search" (ngModelChange)="inputChange($event)">
+  <input placeholder="Isin" class="search-input" (ngModelChange)="inputChange($event)">
 </div>
 
 <div class="container text-center">

@@ -789,9 +789,6 @@ C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\bin\Debug\netcoreap
 C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\bin\Debug\netcoreapp3.1\Infrastructure.pdb
 C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csprojAssemblyReference.cache
-C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfoInputs.cache
 C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.AssemblyInfo.cs
 C:\Users\JustR\Desktop\Github Projects\CodeChallenege\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.RazorTargetAssemblyInfo.cache
