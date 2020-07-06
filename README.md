@@ -7,7 +7,7 @@ Result:
 * Unit testing of Controllers, Services and Repositories
 * Packages used: FluentValidation.AspNetCore, Swashbuckle.AspNetCore and MockQuerryable.Moq
 
-## Changes made from feedback
+## Changes 
 Validation and Data Access have been abstracted out to their own layer.  
 Repository pattern implemented as part of SOLID Principles being applied.  
 Await used instead of result. Microsoft recommends: https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming.  
