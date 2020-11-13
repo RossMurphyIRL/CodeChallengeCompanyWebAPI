@@ -1,0 +1,29 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+WORKDIR /app
+
+# Prevent 'Warning: apt-key output should not be parsed (stdout is not a terminal)'
+ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
+
+# install NodeJS 14.15.0
+ENV NODE_VERSION 14.15.0
+ENV NODE_DOWNLOAD_SHA 085c3b3c262fa58cbaad4f2f62eb6cea943fbbf3492ba457b5efa8f27969e04a
+RUN curl -SL "https://nodejs.org/dist/v14.15.0/node-v14.15.0-linux-x64.tar.gz" --output nodejs.tar.gz \
+&& echo "$NODE_DOWNLOAD_SHA nodejs.tar.gz" | sha256sum -c - \
+&& tar -xzf "nodejs.tar.gz" -C /usr/local --strip-components=1 \
+&& rm nodejs.tar.gz \
+&& ln -s /usr/local/bin/node /usr/local/bin/nodejs
+
+# Copy csproj and restore as distinct layers
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy everything else and build
+COPY . ./
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "Client.dll"]
+

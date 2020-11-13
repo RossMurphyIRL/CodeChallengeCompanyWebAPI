@@ -25,7 +25,7 @@ export class UserModel {
 export class HomeService {
   private readonly _companies: BehaviorSubject<any> = new BehaviorSubject(undefined);
   public readonly companies$: Observable<Array<CompanyModel>> = this._companies.asObservable();
-  private url = `https://localhost:44377/api/Companies`;
+  private url = `https://localhost:44666/api/Companies`;
 
 
   constructor(
@@ -67,7 +67,7 @@ export class HomeService {
     user.password = 'angular8Pwd';
     const reqHeader = new HttpHeaders({'No-Auth': 'True' });
     const options = { responseType: 'text' as 'json', headers: reqHeader };
-    this.httpClient.post<any>('https://localhost:44377/api/Token', user, options).subscribe(token => {
+    this.httpClient.post<any>('https://localhost:44666/api/Token', user, options).subscribe(token => {
       window.sessionStorage.setItem('userToken', token);
       this.getCompanies();
     });

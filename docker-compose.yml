@@ -2,14 +2,31 @@ version: '3.4'
 
 services:
   client:
-    image: ${DOCKER_REGISTRY-}client
     build:
-      context: .
-      dockerfile: Client/Dockerfile
-
-services:
+      context: ./Client
+      dockerfile: Dockerfile.Client
+    ports:
+      - "44554:80"
+      - "44555:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=a656159b-dc05-43de-977b-29d30dae2482
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/WebAPI.pfx
+    volumes:
+      - ${APPDATA}\Microsoft\UserSecrets\:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}\ASP.NET\https:/root/.aspnet/https:ro
   webapi:
-    image: ${DOCKER_REGISTRY-}webapi
     build:
       context: .
-      dockerfile: WebAPI/Dockerfile
+      dockerfile: Dockerfile.WebAPI
+    ports:
+      - "44666:44377"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:44377
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=a656159b-dc05-43de-977b-29d30dae2482
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/WebAPI.pfx
+    volumes:
+      - ${APPDATA}\Microsoft\UserSecrets\:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}\ASP.NET\https:/root/.aspnet/https:ro

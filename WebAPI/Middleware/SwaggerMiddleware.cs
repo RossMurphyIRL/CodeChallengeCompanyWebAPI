@@ -24,7 +24,7 @@ namespace WebAPI.Middleware
 				$@"{
 						Path.GetDirectoryName(
 							Assembly.GetEntryAssembly().Location)
-					}\solutionsettings.json";
+					}/solutionsettings.json";
 
 			var solutionSettings = JObject.Parse(File.ReadAllText(binaryPath));
 

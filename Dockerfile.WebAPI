@@ -1,0 +1,19 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
+WORKDIR /app
+EXPOSE 44377
+
+# Copy csproj and restore as distinct layers
+COPY *.sln ./
+COPY WebAPI/* ./WebAPI/
+COPY Core/* ./Core/
+COPY Infrastructure/* ./Infrastructure/
+COPY Services/* ./Services/
+
+RUN dotnet restore WebAPI/WebAPI.csproj
+RUN dotnet publish WebAPI/WebAPI.csproj -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "WebAPI.dll"]

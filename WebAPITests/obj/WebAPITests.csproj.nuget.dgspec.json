@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPITests\\WebAPITests.csproj": {}
+    "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPITests\\WebAPITests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj": {
+    "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\obj\\",
+        "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\murphyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\murphyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -62,24 +62,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\murphyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\murphyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,13 +88,13 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj"
+              "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj"
               }
             }
           }
@@ -128,24 +128,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj": {
+    "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\obj\\",
+        "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\murphyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\murphyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,13 +154,13 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Core\\Core.csproj"
+              "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Core\\Core.csproj"
               }
             }
           }
@@ -194,24 +194,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPITests\\WebAPITests.csproj": {
+    "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPITests\\WebAPITests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPITests\\WebAPITests.csproj",
+        "projectUniqueName": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPITests\\WebAPITests.csproj",
         "projectName": "WebAPITests",
-        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPITests\\WebAPITests.csproj",
-        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPITests\\obj\\",
+        "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPITests\\WebAPITests.csproj",
+        "packagesPath": "C:\\Users\\murphyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPITests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\murphyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -220,16 +220,16 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj"
+              "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj"
               },
-              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj": {
-                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj"
+              "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPI\\WebAPI.csproj": {
+                "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPI\\WebAPI.csproj"
               }
             }
           }
@@ -294,24 +294,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj": {
+    "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\JustR\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\WebAPI\\obj\\",
+        "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\murphyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\JustR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\murphyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -320,16 +320,16 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {},
-          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem@Local/nuget/v3/index.json": {}
+          "https://oireachtas.pkgs.visualstudio.com/_packaging/ProceduralSystem/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Infrastructure\\Infrastructure.csproj"
               },
-              "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\JustR\\Desktop\\Github Projects\\CodeChallenege\\Services\\Services.csproj"
+              "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\murphyr\\source\\repos\\Github\\Project\\Services\\Services.csproj"
               }
             }
           }
@@ -416,7 +416,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
