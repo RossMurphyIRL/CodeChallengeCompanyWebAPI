@@ -11,11 +11,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=https://+:443;http://+:80
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=a656159b-dc05-43de-977b-29d30dae2482
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=5a1e064c-ac87-4bd2-9301-e48c3f4ea9e9
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/WebAPI.pfx
     volumes:
-      - ${APPDATA}\Microsoft\UserSecrets\:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}\ASP.NET\https:/root/.aspnet/https:ro
+      - ./Cert:/root/.aspnet/https:ro
   webapi:
     build:
       context: .
@@ -25,8 +24,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:44377
-      - ASPNETCORE_Kestrel__Certificates__Default__Password=a656159b-dc05-43de-977b-29d30dae2482
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=5a1e064c-ac87-4bd2-9301-e48c3f4ea9e9
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/root/.aspnet/https/WebAPI.pfx
     volumes:
-      - ${APPDATA}\Microsoft\UserSecrets\:/root/.microsoft/usersecrets:ro
-      - ${APPDATA}\ASP.NET\https:/root/.aspnet/https:ro
+      - ./Cert:/root/.aspnet/https:ro
