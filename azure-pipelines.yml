@@ -21,7 +21,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ResearchProjectContainerReg'
-        repository: 'ServiceAndClient'
+        repository: 'WebApiImage'
         command: 'buildAndPush'
         Dockerfile: 'Dockerfile.WebAPI'
     - task: Docker@2
