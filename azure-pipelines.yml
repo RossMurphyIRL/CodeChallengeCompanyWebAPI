@@ -21,15 +21,17 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'ResearchProjectContainerReg'
-        repository: 'ServiceAndClient'
+        repository: 'WebApiImage'
         command: 'buildAndPush'
         Dockerfile: 'Dockerfile.WebAPI'
+        tags: 'latest'
     - task: Docker@2
       inputs:
         containerRegistry: 'ResearchProjectContainerReg'
         repository: 'ClientImage'
         command: 'buildAndPush'
-        Dockerfile: 'Client/Dockerfile'
+        Dockerfile: 'Client/Dockerfile.Client'
+        tags: 'latest'
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
