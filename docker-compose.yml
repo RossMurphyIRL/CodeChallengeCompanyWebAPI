@@ -2,9 +2,7 @@ version: '3.4'
 
 services:
   client:
-    build:
-      context: ./Client
-      dockerfile: Dockerfile.Client
+    image: ResearchProjectWebAPI.azurecr.io/clientimage:latest
     ports:
       - "44554:80"
       - "44555:443"
@@ -16,9 +14,7 @@ services:
     volumes:
       - ./Cert:/root/.aspnet/https:ro
   webapi:
-    build:
-      context: .
-      dockerfile: Dockerfile.WebAPI
+    image: ResearchProjectWebAPI.azurecr.io/webapiimage:latest
     ports:
       - "44666:44377"
     environment:
