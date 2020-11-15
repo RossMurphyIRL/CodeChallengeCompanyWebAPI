@@ -29,7 +29,7 @@ stages:
         containerRegistry: 'ResearchProjectContainerReg'
         repository: 'ClientImage'
         command: 'buildAndPush'
-        Dockerfile: 'Client/Dockerfile'
+        Dockerfile: 'Client/Dockerfile.Client'
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
